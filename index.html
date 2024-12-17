@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildberries Data Parser</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Wildberries Data Parser</h1>
+        <p>Parse and retrieve product information from Wildberries</p>
+    </header>
+
+    <main>
+        <section id="input-section">
+            <h2>Enter Product Parameters</h2>
+            <form id="parse-form">
+                <label for="category">Item ID:</label>
+                <input type="text" id="item-id" name="category" placeholder="Enter Item ID" required>
+
+                <button type="submit">Start Parsing</button>
+            </form>
+        </section>
+
+        <section id="results-section">
+            <h2>Parsed Results</h2>
+            <div id="loading-message">
+                <p>Loading...</p>
+            </div>
+            <div id="results-container">
+                <!-- Parsed data will be displayed here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Wildberries Data Parser | All rights reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
