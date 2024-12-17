@@ -5,7 +5,14 @@ document.getElementById('parse-form').addEventListener('submit', async function(
     document.getElementById('loading-message').style.display = 'block';
     document.getElementById('results-container').innerHTML = '';
 
-    const itemId = document.getElementById('item-id').value;
+    let itemId;
+    const InputValue = document.getElementById('item-id').value;
+    //https://www.wildberries.ru/catalog/80094633/detail.aspx
+    if (!Number.isInteger(Number(InputValue))) {
+        itemId = InputValue.match(/\d+/)[0];
+    } else {
+        itemId = document.getElementById('item-id').value;
+    }
 
     try {
         // Fetch data from FastAPI backend
@@ -51,4 +58,5 @@ document.getElementById('parse-form').addEventListener('submit', async function(
         document.getElementById('loading-message').style.display = 'none';
         document.getElementById('results-container').innerHTML = '<p>Error occurred while fetching data.</p>';
     }
+
 });
